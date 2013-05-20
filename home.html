@@ -4,122 +4,8 @@
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 		<title>Fun主题-商店首页</title>
-        <link rel="stylesheet" href=""/>
+        <link rel="stylesheet" href="style/site.css"/>
 	</head>
-	<style>
-		body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, aside, article, figcaption, figure, header, hgroup, menu, nav, section{
-
-			margin:0 ;
-			padding: 0;
-
-		}
-		body{
-			font: 14px 'Helvetica Neue',Arial,sans-serif;
-			background-color: #faf7f0;
-			width: 320px;
-			margin: 0 auto;
-		}
-		nav{
-			height: 40px;
-			line-height: 40px;
-			background-image: -webkit-linear-gradient(top, #fff,#dbd7d7);
-			box-shadow:  3px 1px 5px #7c7979;
-			font-size: 15px;
-			padding:3px 0;
-		}
-		nav > a{
-			width: 25%;
-			display: block;
-			text-align: center;
-			float: left;
-		}
-
-		nav > a.select{
-			border-bottom: 3px solid #538ff3;
-		}
-		.slider{
-			height: 120px;
-			width: 320px;
-			margin-top: 5px;
-		}
-		.slider img{
-			width: 100%;
-			height: 100%;
-		}
-
-		.content{
-			margin-top: 5px;
-		}
-		.content ul{
-			list-style-type: none;
-		}
-		.content li{
-			height: 80px;
-			padding: 5px 10px;
-			display: -webkit-box;
-			-webkit-box-orient: horizontal;
-			-webkit-box-pack: justify;
-			-webkit-box-align: center;
-			background: url(image/x-split.png) no-repeat 0 100%;
-		}
-		.content .info{
-			padding: 5px 70px 0 0;
-			position: relative;
-			min-height: 80px;
-			margin-right: 5px;
-			width: 120px;
-		}
-
-		.content .info h2{
-			padding: 4px 5px 3px 0;
-			height: 17px;
-			line-height: 22px;
-			font-size: 16px;
-			word-break: break-all;
-			margin-bottom: 5px;
-			overflow: hidden;
-		}
-
-		.icon{
-			
-			display: block;
-			top: 5px;
-			left: 5px;
-		}
-		.icon img{
-			width: 72px;
-			height: 72px;
-			border-radius: 8px;
-		}
-
-		.content .txt{
-			color: #777;
-			font-size: 12px;
-			height: 18px;
-			line-height: 18px;
-			overflow: hidden;
-		}
-
-		.content .down-btn{
-			position: absolute;
-			top: 20px;
-			right: 5px;
-			width: 34px;
-			height: 35px;
-		}
-
-		.content .y-split{
-			background: url('image/y-split.png') no-repeat;
-			width: 1px;
-			height: 60px;
-		}
-
-		.content .right{
-			position: absolute;
-			top: 10px;
-			right: 50px;
-		}
-	</style>
 	<body>
 		<nav>
 			<a class="select">首页</a>
@@ -130,6 +16,10 @@
 		<section id="container">
 			<div class="slider">
 				<img src="image/4094.jpg">
+			</div>
+			<div class="nav_second_level">
+				<span id="male">男生专区</span>
+				<span id="female">女生专区</span>
 			</div>
 			<div class="content">
 				<ul class="v-list">
@@ -209,5 +99,24 @@
 				</ul>
 			</div>
 		</section>	
+		<script src="js/zepto.min.js"></script>
+		<script>
+			$(function(){
+			$(".nav_second_level").css('background','url(image/female-selected.png)');
+				$("#female").click(function(){
+					$(".nav_second_level").css('background','url(image/female-selected.png)');
+
+				});
+				$("#male").click(function(){
+					$(".nav_second_level").css('background','url(image/male-selected.png)');
+					
+				});
+
+				$(".v-list li").click(function(){
+					location.href="home-details.html";
+				})
+
+			});
+		</script>
 	</body>
 </html>
